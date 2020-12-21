@@ -1,0 +1,56 @@
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px 20px;
+   text-align: center;
+   
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+
+#table_01 {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table_01 td, #table_01 th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#table_01 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  text-transform:uppercase;
+  background-color: #4CAF50;
+  color: white;
+}
+#table_01 tr {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+ 
+}
+
+.Bussiness_Page{
+  background-image: linear-gradient(to bottom, #162447, #18294d, #1a2e53, #1b345a, #1d3960, #1f385e, #21375b, #223659, #222f4e, #212843, #1e2139, #1b1b2f);  
+  
+  padding: 100px 0px 100px 0px;
+}
