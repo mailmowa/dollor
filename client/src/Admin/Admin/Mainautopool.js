@@ -2,7 +2,7 @@ import React from 'react';
 import Autopool from './Autopool/autopool';
 import Autopool2 from './Autopool/autopoolTwo';
 import Autopool3 from './Autopool/autopoolThree';
-import Autopool4 from './Autopool/autopoolFour';
+// import Autopool4 from './Autopool/autopoolFour';
 
 class Mainautopool extends React.Component{
 
@@ -41,12 +41,7 @@ class Mainautopool extends React.Component{
                      Autopool 3
                     </button>
 
-                    <button
-                    className="btn btn-link"
-                    onClick={() => this.setState({render: <Autopool4></Autopool4>})}
-                    > 
-                     Autopool 4
-                    </button>
+                  
 
                     {/* <button
                     className="btn btn-link"

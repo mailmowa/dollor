@@ -58,7 +58,8 @@ setInterval(()=>{
           {
             $inc:{
               Royaltyamount: parseFloat(1),
-              Royalty: -parseFloat(1)
+              Royalty: -parseFloat(1) ,
+              Totalearnings : parseFloat(1),
             }
           }).then(res => {
                 console.log(res);

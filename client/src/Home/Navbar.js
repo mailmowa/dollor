@@ -7,7 +7,9 @@ class Navbar extends React.Component {
    
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            toggle: false,
+         }
     }
 
     // componentDidMount() {
@@ -29,14 +31,21 @@ class Navbar extends React.Component {
                     {/* <!-- Navbar--> */}
                 <header class="header">
                     <nav id="NAV_BAR" className="navbar  navbar-expand-lg fixed-top  active py-4">
-                        <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">Transparent Nav </a>
-                            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+                        <div class="container"><a href="/Home" class="navbar-brand text-uppercase font-weight-bold">
+                           <div className="Brand_heading_nav">
+                                {/* <i class='fas fa-dollar-sign fa-rotate-45'></i> */}
+                                <span >
+                                            <span style={{color:"gold",fontSize:"1.5em"}}>$</span>Dollar.net
+                                </span>
+                            </div>
+                        </a>
+                            <button type="button" onClick={() => {this.setState({toggle: !this.state.toggle})}} class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                             
-                            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                            <div id="navbarSupportedContent" className={this.state.toggle?"navbar-collapse":"collapse navbar-collapse"}>
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item active"><a href="/" class="nav-link text-uppercase font-weight-bold m-1">Home <span class="sr-only">(current)</span></a></li>
-                                    <li class="nav-item"><a href="/Home/users" class=" nav-link text-uppercase font-weight-bold m-1 ">About</a></li>
-                                    <li class="nav-item"><a href="/Home/about" class="nav-link text-uppercase font-weight-bold m-1">Contact</a></li>
+                                    <li class="nav-item"><a href="/Home/About" class=" nav-link text-uppercase font-weight-bold m-1 ">About</a></li>
+                                    <li class="nav-item"><a href="/Home/Contact" class="nav-link text-uppercase font-weight-bold m-1">Contact</a></li>
                                 </ul>
                                 <span className="btn btn-rounded rounded-pill aqua-gradient m-1 btn-md"><a href="/Home/Login">login</a></span>
                                 <span className="btn btn-rounded aqua-gradient rounded-pill m-1 btn-md"><a href="/Home/Register">Register</a></span>

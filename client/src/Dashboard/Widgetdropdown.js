@@ -14,10 +14,10 @@ const WidgetsDropdown = (props) => {
   // render
   return (
     <CRow>
-      <CCol sm="6" lg="3">
+      <CCol sm="6" lg="6">
         <CWidgetDropdown
           color="gradient-primary"
-          style={{paddingBottom:"20px"}}
+          style={{paddingBottom:"1em",fontSize:"1.5em"}}
           header={props.incomes.wallet}
           text="Wallet Income"
         //   footerSlot={
@@ -32,7 +32,11 @@ const WidgetsDropdown = (props) => {
         //     />
         //   }
         >
-          <CDropdown>
+            <div style={{width:"40%",height:"100%",fontSize:"3.2em",display:"flex",justifyContent:"flex-end",alignContent:"center",opacity:"0.6"}}>
+            <i class='fas fa-wallet '></i>
+          </div>
+         
+          {/* <CDropdown>
             <CDropdownToggle color="transparent">
               <CIcon name="cil-settings"/>
             </CDropdownToggle>
@@ -42,15 +46,15 @@ const WidgetsDropdown = (props) => {
               <CDropdownItem>Something else here...</CDropdownItem>
               <CDropdownItem disabled>Disabled action</CDropdownItem>
             </CDropdownMenu>
-          </CDropdown>
+          </CDropdown> */}
         </CWidgetDropdown>
       </CCol>
 
-      <CCol sm="6" lg="3">
+      <CCol sm="6" lg="6">
         <CWidgetDropdown
           color="gradient-info"
           header={props.incomes.Level}
-          style={{paddingBottom:"20px"}}
+          style={{paddingBottom:"1em",fontSize:"1.5em"}}
           text="Level Income "
         //   footerSlot={
         //     <ChartLineSimple
@@ -65,25 +69,18 @@ const WidgetsDropdown = (props) => {
         //     />
         //   }
         >
-          <CDropdown>
-            <CDropdownToggle caret={false} color="transparent">
-              <CIcon name="cil-location-pin"/>
-            </CDropdownToggle>
-            <CDropdownMenu className="pt-0" placement="bottom-end">
-              <CDropdownItem>Action</CDropdownItem>
-              <CDropdownItem>Another action</CDropdownItem>
-              <CDropdownItem>Something else here...</CDropdownItem>
-              <CDropdownItem disabled>Disabled action</CDropdownItem>
-            </CDropdownMenu>
-          </CDropdown>
+          <div style={{width:"50%",height:"100%",fontSize:"3em",display:"flex",justifyContent:"flex-end",opacity:"0.6"}}>
+              <i class="fa fa-sitemap" aria-hidden="true"></i>
+          </div>
+          
         </CWidgetDropdown>
       </CCol>
 
-      <CCol sm="6" lg="3">
+      <CCol sm="6" lg="6">
         <CWidgetDropdown
           color="gradient-warning"
           header={props.incomes.Recieved}
-          style={{paddingBottom:"20px"}}
+          style={{paddingBottom:"1em",fontSize:"1.5em"}}
           text="Received Income"
         //   footerSlot={
         //     <ChartLineSimple
@@ -98,39 +95,65 @@ const WidgetsDropdown = (props) => {
         //     />
         //   }
         >
-          <CDropdown>
-            <CDropdownToggle color="transparent">
-              <CIcon name="cil-settings"/>
-            </CDropdownToggle>
-            <CDropdownMenu className="pt-0" placement="bottom-end">
-              <CDropdownItem>Action</CDropdownItem>
-              <CDropdownItem>Another action</CDropdownItem>
-              <CDropdownItem>Something else here...</CDropdownItem>
-              <CDropdownItem disabled>Disabled action</CDropdownItem>
-            </CDropdownMenu>
-          </CDropdown>
+          
+              <div style={{width:"50%",height:"100%",fontSize:"3em",display:"flex",justifyContent:"flex-end",opacity:"0.6"}}>
+                 <i class='fas fa-download'></i>
+              </div>
         </CWidgetDropdown>
       </CCol>
 
-      <CCol sm="6" lg="3">
+      <CCol sm="6" lg="6">
         <CWidgetDropdown
           color="gradient-danger"
           header={props.incomes.Autopool}
           text="Autopool Income"
-          style={{paddingBottom:"20px"}}
+          style={{paddingBottom:"1em",fontSize:"1.5em"}}
           
         >
-          <CDropdown>
-            <CDropdownToggle caret className="text-white" color="transparent">
-              <CIcon name="cil-settings"/>
-            </CDropdownToggle>
-            <CDropdownMenu className="pt-0" placement="bottom-end">
-              <CDropdownItem>Action</CDropdownItem>
-              <CDropdownItem>Another action</CDropdownItem>
-              <CDropdownItem>Something else here...</CDropdownItem>
-              <CDropdownItem disabled>Disabled action</CDropdownItem>
-            </CDropdownMenu>
-          </CDropdown>
+            <div style={{width:"50%",height:"100%",fontSize:"3em",display:"flex",justifyContent:"flex-end",opacity:"0.6"}}>
+            <i class='fas fa-hand-holding-usd'></i>
+              </div>
+        </CWidgetDropdown>
+      </CCol>
+
+      <CCol sm="6" lg="6">
+        <CWidgetDropdown
+          color="gradient-dark"
+          header={props.incomes.Royalty}
+          style={{paddingBottom:"1em",fontSize:"1.5em"}}
+          text="Royalty Income"
+        //   footerSlot={
+        //     <ChartLineSimple
+        //       className="mt-3"
+        //       style={{height: '70px'}}
+        //       backgroundColor="rgba(255,255,255,.2)"
+        //       dataPoints={[78, 81, 80, 45, 34, 12, 40]}
+        //       options={{ elements: { line: { borderWidth: 2.5 }}}}
+        //       pointHoverBackgroundColor="warning"
+        //       label="Members"
+        //       labels="months"
+        //     />
+        //   }
+        >
+          
+          <div style={{width:"50%",height:"100%",paddingRight:"20px",fontSize:"3em",display:"flex",justifyContent:"flex-end",opacity:"0.6"}}>
+          <i class='fas fa-dollar-sign'></i>
+          </div>
+        </CWidgetDropdown>
+      </CCol>
+
+      <CCol sm="6" lg="6">
+        <CWidgetDropdown
+          color="gradient-success"
+          header={props.incomes.Totalearnings}
+          text="Total Earnings"
+          style={{paddingBottom:"1em",fontSize:"1.5em"}}
+          
+        >
+         
+          <div style={{width:"50%",height:"100%",fontSize:"3em",display:"flex",justifyContent:"flex-end",opacity:"0.6"}}>
+                <i class='fas fa-money-bill-wave'></i>
+          </div>
         </CWidgetDropdown>
       </CCol>
     </CRow>

@@ -318,8 +318,8 @@ class GeneratePin extends React.Component {
 
   render(){
 
-  //   if(this.state.active )
-  //  {
+    if(this.state.active )
+   {
     return(   <div>
       <header className="Header">
            Generate Pins
@@ -401,27 +401,27 @@ class GeneratePin extends React.Component {
     
 
 </div>)
-//    }
-//    else
-//    {
-//     return(
+   }
+   else
+   {
+    return(
 
-//       <div style={{ width: "100%",
-//       display:"flex",
-//       justifyContent:"center",
-//       alignItems:"center",
-//       padding:"5%",
-//       fontFamily:"sans-serif",
-//       color:"#ffff",
-//       backgroundColor:"#006B94",
-//       textTransform:"uppercase"}}>
+      <div style={{ width: "100%",
+      display:"flex",
+      justifyContent:"center",
+      alignItems:"center",
+      padding:"5%",
+      fontFamily:"sans-serif",
+      color:"#ffff",
+      backgroundColor:"#006B94",
+      textTransform:"uppercase"}}>
 
-//               Please Active Your Account
+              Please Active Your Account
           
-//       </div>
+      </div>
 
-// )
-//    }
+)
+   }
   }
 }
 

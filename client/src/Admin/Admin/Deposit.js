@@ -207,6 +207,8 @@ handleDepositSubmit = (e) => {
             Loading_DC: false
           })
 
+          window.location.reload()
+
         }
         else
         {

@@ -79,6 +79,10 @@ const userSchema = new newSchema({
         type: mongoose.Schema.Types.Decimal128,
         required: true
     },
+    Totalearnings:{
+        type: mongoose.Schema.Types.Decimal128,
+        required: true
+    },
     availablePins:{
         type: Array,
         required: true

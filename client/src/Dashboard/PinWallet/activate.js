@@ -222,7 +222,7 @@ export default class Activate extends React.Component{
 
 render(){
 
- // if(this.state.Active){
+  if(this.state.Active){
   return(
           <div >
              <header className="Header" >
@@ -334,25 +334,25 @@ render(){
   
   
   )
-//}
-  // else
-  // {
-  //      return(
+}
+  else
+  {
+       return(
 
-  //               <div style={{ width: "100%",
-  //               display:"flex",
-  //               justifyContent:"center",
-  //               alignItems:"center",
-  //               padding:"5%",
-  //               color:"black",
-  //               backgroundColor:"#006B94",
-  //               textTransform:"uppercase"}}>
+                <div style={{ width: "100%",
+                display:"flex",
+                justifyContent:"center",
+                alignItems:"center",
+                padding:"5%",
+                color:"black",
+                backgroundColor:"#006B94",
+                textTransform:"uppercase"}}>
 
-  //                       Please Activate Your Account
+                        Please Activate Your Account
                     
-  //               </div>
+                </div>
 
-  //      )
-  // }
+       )
+  }
 }
 }

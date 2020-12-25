@@ -5,6 +5,24 @@
 * ==========================================
 *
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Lobster&display=swap');
+
+
+
+.Brand_heading_nav{
+
+    font-family: 'Leckerli One', cursive;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    
+
+}
+
+.blue{
+    text-emphasis-color: blue;
+}
+
 .navbar {
     transition: all 0.4s;
 }

@@ -21,14 +21,14 @@ const TheHeaderDropdown = () => {
       <CDropdownToggle className="c-header-nav-link" caret={false}>
         <div className="c-avatar">
           <CImg
-            src={'avatars/6.jpg'}
+            src={'https://th.bing.com/th/id/OIP.LPVMnRRCsViD3KskWVjT4AHaHl?w=199&h=203&c=7&o=5&pid=1.7'}
             className="c-avatar-img"
             alt="admin@bootstrapmaster.com"
           />
         </div>
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
-        <CDropdownItem
+        {/* <CDropdownItem
           header
           tag="div"
           color="light"
@@ -80,15 +80,15 @@ const TheHeaderDropdown = () => {
           <CIcon name="cil-file" className="mfe-2" /> 
           Projects
           <CBadge color="primary" className="mfs-auto">42</CBadge>
-        </CDropdownItem>
-        <CDropdownItem divider />
+        </CDropdownItem>*/}
+        <CDropdownItem divider /> 
         <CDropdownItem onClick={() => {
                sessionStorage.setItem("LOGIN",JSON.stringify(false));
                history.push('/')
                window.location.reload()}
         }>
           <CIcon name="cil-lock-locked" className="mfe-2" /> 
-          Lock Account
+          Log out
         </CDropdownItem>
       </CDropdownMenu>
     </CDropdown>

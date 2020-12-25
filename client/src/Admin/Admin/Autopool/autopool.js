@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {MDBDataTable} from 'mdbreact';
 
+
 let Autopooldata = {
     columns: [
       {
@@ -83,24 +84,8 @@ let Availabledata = {
         field: 'l1',
       },
       {
-        label: 'Level Two',
-        field: 'l2',
-      },
-      {
-        label: 'Level Three',
-        field: 'l3',
-      },
-      {
         label: 'Level One Income',
         field: 'l1in',
-      },
-      {
-        label: 'Level Two Income',
-        field: 'l2in',
-      },
-      {
-        label: 'Level Three Income',
-        field: 'l3in',
       },
       {
         label: 'Available',
@@ -123,7 +108,8 @@ class Autopool extends React.Component {
             data2 : {},
             AvailableArray: [],
             data3 : {},
-            deleteArray: []
+            deleteArray: [],
+            Loading: false,
         }
 
     }
@@ -234,7 +220,7 @@ class Autopool extends React.Component {
 
       }
 
-  createDeleteTable = (members)=> {
+    createDeleteTable = (members)=> {
         let i = 0;
         Deletedata.rows=[];
 
@@ -249,11 +235,7 @@ class Autopool extends React.Component {
                 userid: Direct.userId,
                 date: Direct.date,
                 l1: Direct.levelOne,
-                l2: Direct.levelTwo,
-                l3: Direct.levelThree,
                 l1in: Direct.levelOneIncome.$numberDecimal,
-                l2in: Direct.levelTwoIncome.$numberDecimal,
-                l3in: Direct.levelThreeIncome.$numberDecimal,
                 available: Direct.available
 
               }
@@ -267,64 +249,74 @@ class Autopool extends React.Component {
 
     handleInitializeAutopool = async () =>{
 
-      let AvailableArr = this.state.AvailableArray
-      let autoarray = this.state.autopoolArray
-      let loopNumber =  Math.floor(AvailableArr.length/4)
+          this.setState({
+            Loading: true
+          })
 
-      let j = 0;
+          let AvailableArr = this.state.AvailableArray
+          let autoarray = this.state.autopoolArray
+          let loopNumber =  Math.floor(AvailableArr.length/4)
 
-      for (let i = 0; i < loopNumber; i++) {
-       // console.log("executing");
-        let K= 0,userids= [],ids=[];
-        do {
+          let j = 0;
 
-             userids.push( AvailableArr[j].userId )
+          for (let i = 0; i < loopNumber; i++) {
+          // console.log("executing");
+            let K= 0,userids= [],ids=[];
+            do {
 
-          K++;
-          j++;
-        } while (K < 4);
+                userids.push( AvailableArr[j].userId )
 
-        console.log(autoarray[i].userId,":",userids);
-      await  axios.post('/api/Admin/InitialisedAutopoolOne',{
+              K++;
+              j++;
+            } while (K < 4);
 
-          useridsArray: userids,
-          _id: autoarray[i]._id,
-          userid:  autoarray[i].userId
+            console.log(autoarray[i].userId,":",userids);
+          await  axios.post('/api/Admin/InitialisedAutopoolOne',{
 
-        }).then(res => {
-         // console.log(res.data);
-          document.getElementById('display').append(res.data.msg);
-        })
+              useridsArray: userids,
+              _id: autoarray[i]._id,
+              userid:  autoarray[i].userId
 
-      }
+            }).then(res => {
+            // console.log(res.data);
+              document.getElementById('display').append(res.data.msg);
+            })
+
+          }
+
+
+            window.location.reload();
 
     }
 
     handleDelete = async () => {
 
-
-      let DeleteArray = this.state.deleteArray,k=[];
-
-      for (let i = 0; i < DeleteArray.length; i++) {
-
-       await axios.post('/api/Admin/performDeleteOne',{
-          userid: DeleteArray[i].userId
-        })
-        .then(es => {
-           console.log();
-           if(parseInt(es.data.status) === parseInt(1))
-           {
-                 document.getElementById("UP_MSG").innerHTML = "UPDATED SUCCESSFULLY"
-           }
-           else
-           {
-                    document.getElementById("UP_MSG").innerHTML = "Soething wrong"
-           }
+        this.setState({
+          Loading: true
         })
 
-      }
+        let DeleteArray = this.state.deleteArray,k=[];
 
+        for (let i = 0; i < DeleteArray.length; i++) {
 
+        await axios.post('/api/Admin/performDeleteOne',{
+            userid: DeleteArray[i].userId
+          })
+          .then(es => {
+            console.log();
+            if(parseInt(es.data.status) === parseInt(1))
+            {
+                  document.getElementById("UP_MSG").innerHTML = "UPDATED SUCCESSFULLY"
+            }
+            else
+            {
+                      document.getElementById("UP_MSG").innerHTML = "Soething wrong"
+            }
+          })
+
+        }
+
+        window.location.reload();
 
     }
 
@@ -335,8 +327,14 @@ class Autopool extends React.Component {
 
                 {/* Autopool table */}
 
-                <div style={{padding:"15px 30px",margin:"10px",backgroundColor:"black",color:"White"}}>
-                    Autopool Table
+                <div 
+                style={{
+                      padding:"15px 30px",
+                      margin:"10px",
+                      backgroundColor:"black",
+                      color:"White"
+                  }}>
+                     Autopool Table
                 </div>
                 <div>
                                 <MDBDataTable
@@ -358,7 +356,7 @@ class Autopool extends React.Component {
                     Available members details
                 </div>
                 <div>
-                                <MDBDataTable
+                             <MDBDataTable
                                 striped
                                 bordered
                                 sortable={false}
@@ -370,17 +368,18 @@ class Autopool extends React.Component {
                                 responsiveMd
 
                                 data={this.state.data2}
-                                />
+                            />
                 </div>
                 <div id="display"></div>
+                
                 {/* Initialize Autopool Button */}
                 <button
                 className="btn btn-primary btn-sm"
+                disabled={this.state.Loading}
                 onClick={() => this.handleInitializeAutopool()}
                 >
-                     Intialize Autopool
+                    {this.state.Loading?"Loading...":"Intialize Autopool"}
                 </button>
-
 
                  <div style={{padding:"15px 30px",margin:"10px",backgroundColor:"black",color:"White"}}>
                     Delete Rising completed Ids
@@ -401,15 +400,18 @@ class Autopool extends React.Component {
                                 />
                 </div>
 
-                  <div id="UP_MSG">
+                    <div id="UP_MSG">
 
                   </div>
 
                 {/* Initialize Delete Pool Members Button */}
                 <button
                 className="btn btn-primary btn-sm"
+                disabled={this.state.Loading}
                 onClick={()=> this.handleDelete()}
-                > Remove poolOne Ids </button>
+                > 
+                   {this.state.Loading?"Loading...":"Remove poolOne Ids "}
+                </button>
 
             </div>
         )

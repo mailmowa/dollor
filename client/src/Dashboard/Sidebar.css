@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Lobster&display=swap');
+
+
+
+.Brand_heading{
+
+    font-family: 'Leckerli One', cursive;
+    font-size: 1.5em;
+    
+
+}
+
+.blue{
+    text-emphasis-color: blue;
+}

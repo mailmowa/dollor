@@ -83,24 +83,8 @@ let Availabledata = {
         field: 'l1', 
       },
       {
-        label: 'Level Two',
-        field: 'l2',
-      },
-      {
-        label: 'Level Three',
-        field: 'l3',
-      },
-      {
         label: 'Level One Income',
         field: 'l1in', 
-      },
-      {
-        label: 'Level Two Income',
-        field: 'l2in',
-      },
-      {
-        label: 'Level Three Income',
-        field: 'l3in',
       },
       {
         label: 'Available',
@@ -185,28 +169,28 @@ class Autopooltwo extends React.Component {
     createAutopoolTable= (members)=> {
         let i = 0;
         Autopooldata.rows=[];
-       //console.log(members);
-   { members &&   members.map(Direct => {
+         //console.log(members);
+        { members &&   members.map(Direct => {
 
-              const details = Direct
-            //  console.log(Direct);
-              i++
-              const obj = {
+                    const details = Direct
+                  //  console.log(Direct);
+                    i++
+                    const obj = {
 
-                Sno: i,
-                userid:Direct.userId,
-                date:Direct.date,
-                level:Direct.levelOne,
-                members:Direct.members.join(',')
-                        
-              }
+                      Sno: i,
+                      userid:Direct.userId,
+                      date:Direct.date,
+                      level:Direct.levelOne,
+                      members:Direct.members.join(',')
+                              
+                    }
+            
+                    Autopooldata.rows.push(obj)
+            } )}
+
+        this.setState({data1: Autopooldata,autopoolArray:members})
       
-              Autopooldata.rows.push(obj)
-      } )}
-
-      this.setState({data1: Autopooldata,autopoolArray:members})
-      
-      }
+    }
 
     createAvailaleTable= (members)=> {
         let i = 0;
@@ -234,7 +218,7 @@ class Autopooltwo extends React.Component {
       
       }
 
-  createDeleteTable = (members)=> {
+    createDeleteTable = (members)=> {
         let i = 0;
         Deletedata.rows=[];
       // console.log(members);
@@ -249,11 +233,7 @@ class Autopooltwo extends React.Component {
                 userid: Direct.userId,
                 date: Direct.date,
                 l1: Direct.levelOne,
-                l2: Direct.levelTwo,
-                l3: Direct.levelThree,
                 l1in: Direct.levelOneIncome.$numberDecimal,
-                l2in: Direct.levelTwoIncome.$numberDecimal,
-                l3in: Direct.levelThreeIncome.$numberDecimal,
                 available: Direct.available
                         
               }
@@ -335,18 +315,19 @@ class Autopooltwo extends React.Component {
                 <div style={{padding:"15px 30px",margin:"10px",backgroundColor:"black",color:"White"}}>
                     Autopool Table
                 </div>
+
                 <div>
                                 <MDBDataTable
-                                striped
-                                bordered
-                                sortable={false}
-                                theadColor="#fff"
-                                entries={7}
-                                small
-                                noBottomColumns
-                                responsiveSm
-                                responsiveMd
-                                data={this.state.data1}
+                                  striped
+                                  bordered
+                                  sortable={false}
+                                  theadColor="#fff"
+                                  entries={7}
+                                  small
+                                  noBottomColumns
+                                  responsiveSm
+                                  responsiveMd
+                                  data={this.state.data1}
                                 />
                 </div>
                 
@@ -354,6 +335,7 @@ class Autopooltwo extends React.Component {
                 <div style={{padding:"15px 30px",margin:"10px",backgroundColor:"black",color:"White"}}>
                     Available members details
                 </div>
+                
                 <div>
                                 <MDBDataTable
                                 striped

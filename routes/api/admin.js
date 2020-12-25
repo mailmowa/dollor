@@ -351,11 +351,11 @@ router.post('/getDailyReportDetails',(req,res) => {
           $or:
          [
            {
-            date:
+            dateId:
             { $gte: new Date(req.body.startDate), $lte: new Date(req.body.endDate) },
            },
            {
-            date:
+            dateId:
             { $gte: new Date(req.body.startDate), $lte: new Date(req.body.endDate).setDate(new Date(req.body.endDate).getDate() + 1) },
            },
          ],
@@ -656,8 +656,9 @@ router.post('/Adinfo/withdrawDone', (req,res) => {
     console.log(req.body);
 
     try{
-                const date = new Date();
-                const today = date.toLocaleDateString();
+                    let current_datetime = new Date()
+                    let today = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate()
+
                 const totalPer =  parseFloat(parseFloat(req.body.Amount)-parseFloat(req.body.Total))
 
                 Withdraw.findByIdAndUpdate({_id: req.body.statement_id},{
@@ -675,7 +676,7 @@ router.post('/Adinfo/withdrawDone', (req,res) => {
                         if(statements){
 
                                     DailyReport.findOneAndUpdate({ dateId : today},{
-
+ 
                                         $inc : {
                                             withdrawpercentage : parseFloat(totalPer),
                                             withdraw : parseFloat(req.body.Total)
@@ -934,7 +935,7 @@ router.get('/getPoolTwoCompletedDetails', (req,res) => {
     console.log(req.body);
     Autopool2.find({
         poolTwoCompleted: false,
-        levelOne: 4
+        levelOne: 16
     })
     .then(users => {
         if(users){
@@ -1047,7 +1048,7 @@ router.get('/getPoolThreeCompletedDetails', (req,res) => {
     console.log(req.body);
     Autopool3.find({
         poolThreeCompleted: false,
-        levelOne: 4
+        levelOne: 64
     })
     .then(users => {
         if(users){
@@ -1221,8 +1222,10 @@ console.log("qwwe",req.body);
         Users.findOneAndUpdate({userId: req.body.userid},{
 
             poolOne: false,
+            poolTwo: true,
             $inc : {
-                autoPoolIncome: 10
+                autoPoolIncome: 10,
+                Totalearnings: 10
             }
 
         },{
@@ -1245,7 +1248,7 @@ console.log("qwwe",req.body);
                         levelOne: 0,
                         levelOneIncome: 0,
                         available: true
-                        })
+                    })
         
 
                     autopool.save().catch(er =>{
@@ -1341,7 +1344,7 @@ router.post('/InitialisedAutopoolTwo', (req,res) => {
 
  Autopool2.findByIdAndUpdate({_id : req.body._id},{
 
-        $inc: {levelOne : 4,levelOneIncome: 160},
+        $inc: {levelOne : 16,levelOneIncome: 160},
         members: req.body.useridsArray
 
     },{new: true})
@@ -1399,8 +1402,8 @@ router.post('/InitialisedAutopoolTwo', (req,res) => {
 
         userId: req.body.userid,
         poolName: "Autopool 2",
-        Amountadded: 100,
-        deducted: 60,
+        Amountadded: 60,
+        deducted: 100,
         total: 160
 
     })
@@ -1411,8 +1414,10 @@ router.post('/InitialisedAutopoolTwo', (req,res) => {
         Users.findOneAndUpdate({userId: req.body.userid},{
 
             poolTwo: false,
+            poolThree:true,
             $inc : {
-                autoPoolIncome: parseFloat(100)
+                autoPoolIncome: parseFloat(60),
+                Totalearnings : parseFloat(60)
             }
 
         },{
@@ -1426,13 +1431,14 @@ router.post('/InitialisedAutopoolTwo', (req,res) => {
                 })
                 .then(resp => {
 
-                    const date = new Date();
-                    const today = date.toLocaleDateString();
+                    let current_datetime = new Date()
+                    let today = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate()
+
 
                     DailyReport.findOneAndUpdate({ dateId : today},{
                         $inc : {
-                            PoolOutgo : parseFloat(100),
-                            PoolTwoPinsIncome: parseFloat(60)
+                            PoolOutgo : parseFloat(60),
+                            PoolTwoPinsIncome: parseFloat(100)
                         }
                     }).then(document => {
                         if(!document)
@@ -1442,7 +1448,7 @@ router.post('/InitialisedAutopoolTwo', (req,res) => {
                                 dateId: today,
                                 LevelPinsIncome:  0,
                                 PoolOnePinsIncome:  0,
-                                PoolTwoPinsIncome: parseFloat(60),
+                                PoolTwoPinsIncome: parseFloat(100),
                                 PoolThreePinsIncome: 0,
                                 PoolFourPinsIncome:  0,
                                 PoolFivePinsIncome:  0,
@@ -1456,7 +1462,7 @@ router.post('/InitialisedAutopoolTwo', (req,res) => {
                                 //Spend
                                 LevelOutSpend: 0,
                                 FundSharing:  0,
-                                PoolOutgo: parseFloat(100),
+                                PoolOutgo: parseFloat(60),
                                 withdraw: 0,
                                 //Others
                                 Balance : 0,
@@ -1513,7 +1519,7 @@ router.post('/InitialisedAutopoolThree', (req,res) => {
 
  Autopool3.findByIdAndUpdate({_id : req.body._id},{
 
-        $inc: {levelOne : 4,levelOneIncome: 3840},
+        $inc: {levelOne : 64,levelOneIncome: 6400},
         members: req.body.useridsArray
 
     },{new: true})
@@ -1571,9 +1577,9 @@ router.post('/InitialisedAutopoolThree', (req,res) => {
 
         userId: req.body.userid,
         poolName: "Autopool 3",
-        Amountadded: 3540,
-        deducted: 300,
-        total: 3840
+        Amountadded: 6400,
+        deducted: 0,
+        total: 6400
 
     })
 
@@ -1584,7 +1590,8 @@ router.post('/InitialisedAutopoolThree', (req,res) => {
 
             poolThree: false,
             $inc : {
-                autoPoolIncome: parseFloat(3540)
+                autoPoolIncome: parseFloat(6400),
+                Totalearnings: parseFloat(6400)
             }
 
         },{
@@ -1598,13 +1605,13 @@ router.post('/InitialisedAutopoolThree', (req,res) => {
                 })
                .then(resp => {
 
-                const date = new Date();
-                const today = date.toLocaleDateString();
+                    let current_datetime = new Date()
+                    let today = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate()
+ 
 
                 DailyReport.findOneAndUpdate({ dateId : today},{
                     $inc : {
-                        PoolOutgo : parseFloat(3540),
-                        PoolThreePinsIncome: parseFloat(300)
+                        PoolOutgo : parseFloat(6400),
                     }
                 }).then(document => {
                     if(!document)
@@ -1615,7 +1622,7 @@ router.post('/InitialisedAutopoolThree', (req,res) => {
                             LevelPinsIncome:  0,
                             PoolOnePinsIncome:  0,
                             PoolTwoPinsIncome: 0,
-                            PoolThreePinsIncome: parseFloat(300),
+                            PoolThreePinsIncome: 0,
                             PoolFourPinsIncome:  0,
                             PoolFivePinsIncome:  0,
                             PoolSixPinsIncome:  0,
@@ -1628,7 +1635,7 @@ router.post('/InitialisedAutopoolThree', (req,res) => {
                             //Spend
                             LevelOutSpend: 0,
                             FundSharing:  0,
-                            PoolOutgo: parseFloat(3540),
+                            PoolOutgo: parseFloat(6400),
                             withdraw: 0,
                             //Others
                             Balance : 0,
@@ -1646,18 +1653,18 @@ router.post('/InitialisedAutopoolThree', (req,res) => {
                     }
                 })
 
-                const autopool = new Autopool4({
+                // const autopool = new Autopool4({
 
-                    userId: req.body.userid,
-                    poolFourCompleted: false,
-                    members: [],
-                    referedBy: " ",
-                    levelOne: 0,
-                    levelOneIncome: 0,
-                    available: true
-                })
+                //     userId: req.body.userid,
+                //     poolFourCompleted: false,
+                //     members: [],
+                //     referedBy: " ",
+                //     levelOne: 0,
+                //     levelOneIncome: 0,
+                //     available: true
+                // })
 
-                autopool.save()
+                // autopool.save()
 
             })
 

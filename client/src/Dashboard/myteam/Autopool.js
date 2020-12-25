@@ -257,9 +257,9 @@ export default class Autopool extends React.Component {
                                  Autopool
                             </header>
                             
-                            <div style={{width:"100%",padding:"1%",fontSize:"20px",fontWeight:"500"}}>
+                            {/* <div style={{width:"100%",padding:"1%",fontSize:"20px",fontWeight:"500"}}>
                                 {this.userdata.Active=== "false"? "Please Active Your Account": "WIN BIG HERE"}
-                            </div>
+                            </div> */}
 {/* 
                             <div style={{width:"100%",padding:"1%",fontSize:"14px",backgroundColor:"#",color:"#808080"}}>
                                 <ul>
@@ -370,11 +370,11 @@ export default class Autopool extends React.Component {
                                   </tr>
                                   <tr>
                                       <td colspan="3"> deducted</td>
-                                      <td>- $60</td>
+                                      <td>- $100</td>
                                   </tr>
                                   <tr>
                                       <td colspan="3"> you get</td>
-                                      <td> $100</td>
+                                      <td> $60</td>
                                   </tr>
                              </tbody>
                          </table>
@@ -382,7 +382,7 @@ export default class Autopool extends React.Component {
                         <div style={{backgroundColor:"orange",
                                       marginTop:"20px",
                                       padding:"5px 10px"}}>
-                            <li>60$ AUTO DEBIT FOR REBIRTH</li>
+                            <li>100$ AUTO DEBIT FOR REBIRTH</li>
                          </div>
                    
                     </div>
@@ -417,16 +417,16 @@ export default class Autopool extends React.Component {
                                         <tr>
                                             <td>1</td>
                                             <td>64</td>
-                                            <td>$60</td>
-                                            <td>$3840</td>
+                                            <td>$100</td>
+                                            <td>$6400</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3">deducted</td>
-                                            <td>- $300</td>
+                                            <td>- $00</td>
                                         </tr>
                                         <tr>
                                             <td colspan="3"> you get</td>
-                                            <td>$3540</td>
+                                            <td>$6400</td>
                                         </tr>
                                         
                                     </tbody>
@@ -435,13 +435,13 @@ export default class Autopool extends React.Component {
                                 <div style={{backgroundColor:"orange",
                                             marginTop:"20px",
                                             padding:"5px 10px"}}>
-                                    <li>300$ AUTO DEBIT FOR REBIRTH</li>
+                                    <li>AUTOPOOL ENDS HERE</li>
                                 </div>
                        
                             </div>
                     </Grid>
 
-                    <Grid item xs={12} sm={6}>
+                    {/* <Grid item xs={12} sm={6}>
                     <div style={{padding:"30px"}}>
                    
                                  <div style={{padding:"10px 0px",
@@ -487,6 +487,7 @@ export default class Autopool extends React.Component {
                 
                     </div>
                     </Grid>
+            */}
                  </div>
                  </Grid>
 

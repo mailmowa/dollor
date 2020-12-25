@@ -10,14 +10,21 @@ import {
 import Login from './Login';
 import Register from './Register';
 import Ship from './Text';
+import About from './About';
+import Contcat from './Contact';
+import Footer from './Footer';
 
 function Home12() {
   return <h2>Home</h2>;
 }
 
-function About() {
-  return <h2>About</h2>;
-}
+// function About() {
+//   return (
+//     <div>
+//      <h2>About</h2>
+//    </div>
+//   );
+// }
 
 function Users() {
   return <h2>Users</h2>;
@@ -41,11 +48,11 @@ class Home extends Component {
                 <Route path="/Home" exact>
                       <Body></Body>
                   </Route>
-                  <Route path="/Home/about">
+                  <Route path="/Home/About">
                       <About />
                   </Route>
-                  <Route path="/Home/users">
-                    <Users />
+                  <Route path="/Home/Contact">
+                     <Contcat></Contcat>
                   </Route>
                   <Route path="/Home/Login">
                      <Login></Login>
@@ -53,8 +60,9 @@ class Home extends Component {
                   <Route path="/Home/Register">
                     <Register></Register>
                   </Route>
+
             </Switch>
-     
+            <Footer></Footer>
         </Router> 
                 
                 

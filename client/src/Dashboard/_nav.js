@@ -5,10 +5,7 @@ export default [
       to: '/Home/dashboard',
       // icon: 'cil-speedometer',
       fontIcon: 'fas fa-tachometer-alt',
-      badge: {
-        color: 'info',
-        text: 'NEW',
-      }
+    
     },
     {
       _tag: 'CSidebarNavTitle',
@@ -34,7 +31,7 @@ export default [
       _tag: 'CSidebarNavDropdown',
       name: 'Account',
       route: '/Home/Account',
-      fontIcon: 'fas fa-tachometer-alt',
+      fontIcon: 'fas fa-user',
       _children: [
         {
           _tag: 'CSidebarNavItem',
@@ -122,7 +119,7 @@ export default [
       _tag: 'CSidebarNavDropdown',
       name: 'My Team',
       route: '/Home/My-team',
-      fontIcon: 'fas fa-tachometer-alt',
+      fontIcon: 'fas fa-users',
       _children: [
         {
           _tag: 'CSidebarNavItem',
@@ -156,16 +153,13 @@ export default [
       _tag: 'CSidebarNavDropdown',
       name: 'Fund Wallet',
       to: '/Home/Fund-Wallet',
-      fontIcon: 'fas fa-tachometer-alt',
+      fontIcon: 'fas fa-coins',
       _children: [
         {
           _tag: 'CSidebarNavItem',
           name: 'Send Fund',
           to: '/Home/Fund-wallet/send-fund',
-          badge: {
-            color: 'success',
-            text: 'NEW',
-          },
+        
         },
         {
           _tag: 'CSidebarNavItem',
@@ -189,7 +183,7 @@ export default [
       _tag: 'CSidebarNavDropdown',
       name: 'Deposit',
       route: '/Home/Deposit',
-      fontIcon: 'fas fa-tachometer-alt',
+      fontIcon: 'fas fa-upload',
       _children: [
         {
           _tag: 'CSidebarNavItem',
@@ -224,7 +218,7 @@ export default [
       _tag: 'CSidebarNavDropdown',
       name: 'Pin Wallet',
       route: '/Home/Pin-wallet',
-      fontIcon: 'fas fa-tachometer-alt',
+      fontIcon: 'fas fa-key',
       _children: [
         {
           _tag: 'CSidebarNavItem',
@@ -252,7 +246,7 @@ export default [
       _tag: 'CSidebarNavDropdown',
       name: 'Withdraw',
       to: '/Home/Withdraw',
-      fontIcon: 'fas fa-tachometer-alt',
+      fontIcon: 'fas fa-dollar-sign',
       _children: [
         {
           _tag: 'CSidebarNavItem',
@@ -271,7 +265,7 @@ export default [
       _tag: 'CSidebarNavDropdown',
       name: 'Tickets',
       to: '/Home/Ticket',
-      fontIcon: 'fas fa-tachometer-alt',
+      fontIcon: 'fas fa-ticket-alt',
       _children: [
         {
           _tag: 'CSidebarNavItem',
@@ -290,7 +284,7 @@ export default [
       _tag: 'CSidebarNavItem',
       name: 'Royalty',
       to: '/Home/Royalty',
-      fontIcon: 'fas fa-tachometer-alt',
+      fontIcon: 'fas fa-registered',
 
     },
   

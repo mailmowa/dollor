@@ -38,6 +38,7 @@ const dailyReport = require('../../modals/dailyReport');
 const Depositstatement = require('../../modals/DepositStatement');
 const { getMaxListeners } = require('../../modals/Users');
 
+
 let number;
 User.find({}).sort({_id:-1}).limit(1).then(res => 
    { console.log(res)
@@ -138,7 +139,7 @@ function randomGenerator(){
     number = parseInt(number) + 1
   }
   //const uui = Math.floor(100000 + Math.random() * 900000)
-  return "GT"+number
+  return "DN"+number
 }
 
 //@rout get api/users/getNews
@@ -385,9 +386,9 @@ router.post('/Activate_account', (req,res) => {
   console.log(req.body);
 
   try{
-            const date = new Date();
-            console.log(date.toLocaleDateString());
-            const today = date.toLocaleDateString()
+                    let current_datetime = new Date()
+                    let today = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate()
+
 
             //Activating Accounts
             if(req.body.ActivatingId.toString() === req.body.shouldActivateUserId.toString()){
@@ -655,7 +656,7 @@ router.post('/Activate_account', (req,res) => {
                                                           if(userqwe[0].levelTeam.length >= 4){
 
                                                                     await User.findOneAndUpdate({userId: ReferedBy1},{
-                                                                      $inc: { levelIncome : parseFloat(15)  },
+                                                                      $inc: { levelIncome : parseFloat(15) , Totalearnings: parseFloat(15) },
                                                                       $push : { levelTeam : user2 }
                                                                     }).then( async (user321) => { console.log(user321);
                       
@@ -690,7 +691,7 @@ router.post('/Activate_account', (req,res) => {
                                                           else
                                                           {
                                                                     await User.findOneAndUpdate({userId: ReferedBy1},{
-                                                                      $inc: { levelIncome : parseFloat(10)  },
+                                                                      $inc: { levelIncome : parseFloat(10) ,Totalearnings: parseFloat(10) },
                                                                       $push : { levelTeam : user2 }
                                                                     }).then( async (user123) => { console.log(user123);
                       
@@ -737,7 +738,7 @@ router.post('/Activate_account', (req,res) => {
                                 }else if(i>0 && i<5)
                                 {
                                   await  User.findOneAndUpdate({userId: ReferedBy1},{
-                                    $inc: { levelIncome : parseFloat(1)  }
+                                    $inc: { levelIncome : parseFloat(1) ,Totalearnings: parseFloat(1)  }
                                   }).then( async (user) => {console.log(user); 
 
                                               if(user){
@@ -772,7 +773,7 @@ router.post('/Activate_account', (req,res) => {
                                 else{
 
                                     await  User.findOneAndUpdate({userId: ReferedBy1},{
-                                        $inc: { levelIncome : parseFloat(0.5)  }
+                                        $inc: { levelIncome : parseFloat(0.5) , Totalearnings: parseFloat(0.5) }
                                       }).then( async (user) => {console.log(user); 
 
                                                   if(user){
@@ -943,12 +944,13 @@ router.post('/sendFund/pinWallet', (req,res) => {
   //  sendMnyTo:this.state.sendMnyTo,
 
 try{
-          const date = new Date();
-          const today = date.toLocaleDateString();
+         
 
            
           let current_datetime = new Date()
           let end_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate()
+          
+          let today = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate()
 
 
           let percent = (parseFloat(parseFloat(req.body.levelamount)+parseFloat(req.body.autoamount)+parseFloat(req.body.fundamount)+parseFloat(req.body.recievedamount))*0.05)
@@ -1288,6 +1290,36 @@ router.post('/Fund_Statement', (req,res) => {
     }
 });
 
+//@rout get api/users/Direct_Members/GetFundSharing
+// @desc get all users
+// @acess public
+router.post('/Pool_statement', (req,res) => {
+  console.log(req.body);
+  try{
+          poolStatement.find({userId: req.body.userid})
+          .sort({date : -1 }) 
+            .then(users => {
+                        console.log(users);
+                        if(users){
+                               res.json({status: 1 ,users})
+                        }
+                        else{
+                                res.json({ status:0 })
+                                console.log("not found");
+                        }
+
+              }).catch(err => {
+                      console.log(err.message);
+                      res.json({ status:0 })
+              })
+    }
+    catch(err)
+    {
+       console.log(err.message);
+       res.json({ status:0 })
+    }
+});
+
 
 //@rout get api/users/GetFundSharing
 // @desc get all users
@@ -1397,6 +1429,7 @@ try{
         recievedIncome: 0.00,
         Royalty: 30,
         Royaltyamount: 0.00,
+        Totalearnings: 0.00,
         availablePins:[],
         pinBalance: 0.00,
         poolOne: false,

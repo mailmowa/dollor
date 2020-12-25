@@ -12,6 +12,7 @@ import {
 } from '@coreui/react'
 
 import CIcon from '@coreui/icons-react'
+import './Sidebar.css'
 
 import {
   TheContent,
@@ -34,6 +35,12 @@ const TheSidebar = () => {
     //   onShowChange={}
     >
       <CSidebarBrand className="d-md-down-none" >
+         <div className="Brand_heading">
+         {/* <i class='fas fa-dollar-sign fa-rotate-45'></i> */}
+         <span >
+                      <span style={{color:"gold",fontSize:"1.5em"}}>$</span>Dollar.net
+         </span>
+         </div>
         <CIcon
           className="c-sidebar-brand-full"
           name="logo-negative"
@@ -60,15 +67,15 @@ const TheSidebar = () => {
       </CSidebarNav>
       <CSidebarMinimizer className="c-d-md-down-none"/>
     </CSidebar>
-          
-    <div className="c-wrapper"> 
+
+    <div className="c-wrapper">
         <TheHeader toggleSideBar={() => setshow(!show)} />
         <div className="c-body">
           <TheContent/>
         </div>
         {/* <TheFooter/>*/}
-      </div> 
-    
+      </div>
+
     </div>
   )
 }
