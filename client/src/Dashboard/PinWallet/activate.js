@@ -157,6 +157,7 @@ export default class Activate extends React.Component{
                                   if(parseInt(res.data.status) === parseInt(1)){
                                     
                                             sessionStorage.setItem('USER_DETAILS',JSON.stringify(res.data.user1))
+                                          
                                             this.setState({
                                               memberId:"",
                                               memberName:"",
@@ -344,7 +345,7 @@ render(){
                 justifyContent:"center",
                 alignItems:"center",
                 padding:"5%",
-                color:"black",
+                color:"white",
                 backgroundColor:"#006B94",
                 textTransform:"uppercase"}}>
 

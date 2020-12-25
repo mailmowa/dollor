@@ -345,21 +345,42 @@ catch(err)
 // @acess public
 router.post('/getDailyReportDetails',(req,res) => {
 
+
+  let current_datetime = new Date(req.body.startDate)
+  let end_date_1 = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + (current_datetime.getDate() + 1)
+
+
     console.log(req.body);
+    // DailyReport.find(
+    //     {
+    //       $or:
+    //      [
+    //        {
+    //         dateId:
+    //         { $gte: new Date(req.body.startDate), $lte: new Date(req.body.endDate) },
+    //        },
+    //        {
+    //         dateId:
+    //         { $gte: new Date(req.body.startDate), $lte: new Date(req.body.endDate).setDate(new Date(req.body.endDate).getDate() + 1) },
+    //        },
+    //      ],
+    //     },
+    //   )
+    //   .then(users => {
+    //       console.log(users);
+    //     if(users){
+    //         res.json({status: 1,users});
+    //     }else{
+    //         res.json({status: 0});
+    //     }
+    // })
+
     DailyReport.find(
         {
-          $or:
-         [
-           {
+         
             dateId:
-            { $gte: new Date(req.body.startDate), $lte: new Date(req.body.endDate) },
-           },
-           {
-            dateId:
-            { $gte: new Date(req.body.startDate), $lte: new Date(req.body.endDate).setDate(new Date(req.body.endDate).getDate() + 1) },
-           },
-         ],
-        },
+            { $gte: req.body.startDate, $lte: req.body.endDate },
+        }
       )
       .then(users => {
           console.log(users);

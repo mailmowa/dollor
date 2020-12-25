@@ -21,22 +21,22 @@ const TheHeaderDropdown = () => {
       <CDropdownToggle className="c-header-nav-link" caret={false}>
         <div className="c-avatar">
           <CImg
-            src={'avatars/6.jpg'}
-            className="c-avatar-img"
-            alt="admin@bootstrapmaster.com"
+             src={'https://th.bing.com/th/id/OIP.LPVMnRRCsViD3KskWVjT4AHaHl?w=199&h=203&c=7&o=5&pid=1.7'}
+             className="c-avatar-img"
+             alt="admin@gmail.com"
           />
         </div>
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
-        <CDropdownItem
+        {/* <CDropdownItem
           header
           tag="div"
           color="light"
           className="text-center"
         >
           <strong>Account</strong>
-        </CDropdownItem>
-        <CDropdownItem>
+        </CDropdownItem> */}
+        {/* <CDropdownItem>
           <CIcon name="cil-bell" className="mfe-2" /> 
           Updates
           <CBadge color="info" className="mfs-auto">42</CBadge>
@@ -51,8 +51,8 @@ const TheHeaderDropdown = () => {
           Tasks
           <CBadge color="danger" className="mfs-auto">42</CBadge>
         </CDropdownItem>
-        <CDropdownItem>
-          <CIcon name="cil-comment-square" className="mfe-2" /> 
+        <CDropdownItem> */}
+          {/* <CIcon name="cil-comment-square" className="mfe-2" /> 
           Comments
           <CBadge color="warning" className="mfs-auto">42</CBadge>
         </CDropdownItem>
@@ -66,8 +66,8 @@ const TheHeaderDropdown = () => {
         </CDropdownItem>
         <CDropdownItem>
           <CIcon name="cil-user" className="mfe-2" />Profile
-        </CDropdownItem>
-        <CDropdownItem>
+        </CDropdownItem> */}
+        {/* <CDropdownItem>
           <CIcon name="cil-settings" className="mfe-2" /> 
           Settings
         </CDropdownItem>
@@ -80,7 +80,7 @@ const TheHeaderDropdown = () => {
           <CIcon name="cil-file" className="mfe-2" /> 
           Projects
           <CBadge color="primary" className="mfs-auto">42</CBadge>
-        </CDropdownItem>
+        </CDropdownItem> */}
         <CDropdownItem divider />
         <CDropdownItem onClick={() => {
                sessionStorage.setItem('ADMINLOGIN',JSON.stringify(false))

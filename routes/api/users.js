@@ -1673,8 +1673,9 @@ router.post('/generatePin', (req,res) => {
                         if(user)
                         {
 
-                          const  date = new Date();
-                          const today = date.toLocaleDateString();
+                          let current_datetime = new Date()
+                          let today = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate()
+      
                           dailyReport.findOneAndUpdate({
 
                             dateId : today

@@ -31,7 +31,7 @@ class Dashboard extends Component {
             Level: res.data.user.levelIncome.$numberDecimal,
             Recieved: res.data.user.recievedIncome.$numberDecimal,
             Royalty: res.data.user.Royaltyamount.$numberDecimal,
-            Totalearnings: res.data.Totalearnings.$numberDecimal
+            Totalearnings: res.data.user.Totalearnings.$numberDecimal
           })
       })
       .catch(res => {

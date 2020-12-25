@@ -11,6 +11,7 @@ import {
 import CIcon from '@coreui/icons-react'
 
 const WidgetsDropdown = (props) => {
+  console.log(props.incomes);
   // render
   return (
     <CRow>
