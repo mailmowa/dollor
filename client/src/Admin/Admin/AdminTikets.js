@@ -168,7 +168,24 @@ class Tickets extends React.Component{
 
                             <div>
                                 {this.state.messages && this.state.messages.map(msg => 
-                                   <div className={msg.id === 0?"":""}>{msg.message}</div>
+                                     parseInt(msg.msgid) === parseInt(0)?
+
+                                    <div className="container_Message gradient-primary">
+                                    <img src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" alt="Avatar"  />
+                                    <p style={{float:"left",fontWeight:"400"}}>{msg.message}</p>
+                                    <span class="time-right">Dollar Net</span>
+                                    </div>
+                                   
+                                   
+                                    :
+                                       
+ 
+                                      <div className="container_Message darker">
+                                      <img src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" alt="Avatar" className="right" />
+                                      <p style={{float:"right",fontWeight:"400"}}>{msg.message}</p>
+                                      <span class="time-left">MEMBER</span> 
+                                      </div>
+                                
                                 )}
                             </div>
 

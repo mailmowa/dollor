@@ -694,7 +694,9 @@ router.post('/Adinfo/withdrawDone', (req,res) => {
                         ).then((staetment) => {
                         console.log(staetment);
 
-                        if(statements){
+                        if(staetment){
+
+                            console.log("inside");
 
                                     DailyReport.findOneAndUpdate({ dateId : today},{
  

@@ -17,7 +17,7 @@ const loading = (
 
 const TheContent = () => {
   return (
-    <div style={{backgroundColor:"white"}}>
+    <div style={{backgroundColor:"white",minHeight:"80vh"}}>
     <main className="c-main">
       <CContainer fluid>
         <Suspense fallback={loading}>

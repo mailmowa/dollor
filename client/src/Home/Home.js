@@ -13,6 +13,8 @@ import Ship from './Text';
 import About from './About';
 import Contcat from './Contact';
 import Footer from './Footer';
+import Document from './Businessplan';
+import SignUpWithId from './RegisterWithId';
 
 function Home12() {
   return <h2>Home</h2>;
@@ -54,11 +56,17 @@ class Home extends Component {
                   <Route path="/Home/Contact">
                      <Contcat></Contcat>
                   </Route>
+                  <Route path="/Home/BusinessPlan">
+                      <Document></Document>
+                  </Route>
                   <Route path="/Home/Login">
                      <Login></Login>
                   </Route>
                   <Route path="/Home/Register">
                     <Register></Register>
+                  </Route>
+                  <Route path="/Home/Refer/:id" >
+                    <SignUpWithId></SignUpWithId>
                   </Route>
 
             </Switch>

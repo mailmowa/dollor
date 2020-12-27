@@ -46,6 +46,8 @@ class Navbar extends React.Component {
                                     <li class="nav-item active"><a href="/" class="nav-link text-uppercase font-weight-bold m-1">Home <span class="sr-only">(current)</span></a></li>
                                     <li class="nav-item"><a href="/Home/About" class=" nav-link text-uppercase font-weight-bold m-1 ">About</a></li>
                                     <li class="nav-item"><a href="/Home/Contact" class="nav-link text-uppercase font-weight-bold m-1">Contact</a></li>
+                                    <li class="nav-item"><a href="/Home/BusinessPlan" class=" nav-link text-uppercase font-weight-bold m-1 ">Business Plan</a></li>
+
                                 </ul>
                                 <span className="btn btn-rounded rounded-pill aqua-gradient m-1 btn-md"><a href="/Home/Login">login</a></span>
                                 <span className="btn btn-rounded aqua-gradient rounded-pill m-1 btn-md"><a href="/Home/Register">Register</a></span>

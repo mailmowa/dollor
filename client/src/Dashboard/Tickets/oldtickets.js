@@ -225,12 +225,12 @@ try{
 
                             <div>
                                 {this.state.messages && this.state.messages.map(msg => 
-                                   parseInt(msg.id) === 1?
+                                   parseInt(msg.msgid) === parseInt(0)?
                                    
-                                   <div className="container_Message">
+                                   <div className="container_Message gradient-primary">
                                    <img src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" alt="Avatar"  />
-                                   <p style={{float:"left"}}>{msg.message}</p>
-                                   <span class="time-right">GENIE TREASURE</span>
+                                   <p style={{float:"left",fontWeight:"400"}}>{msg.message}</p>
+                                   <span class="time-right">Dollar Net</span>
                                    </div>
                                   
                                   
@@ -239,7 +239,7 @@ try{
 
                                      <div className="container_Message darker">
                                      <img src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" alt="Avatar" className="right" />
-                                     <p style={{float:"right"}}>{msg.message}</p>
+                                     <p style={{float:"right",fontWeight:"400"}}>{msg.message}</p>
                                      <span class="time-left">MEMBER</span> 
                                      </div>
                                   

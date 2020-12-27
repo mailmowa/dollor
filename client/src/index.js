@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import Admin from './Dashboard/Admin/index';
 import Admin from './Admin/Admin/index';
+import SignUpWithId from './Home/RegisterWithId';
 
 import { BrowserRouter as Router,Route,Switch, useParams,Redirect } from "react-router-dom";
 
@@ -21,8 +22,8 @@ ReactDOM.render(
   <Switch>
             {/* <Route path="/" exact component={App}/> */}
             <Route path="/Home" component={App}/>
-            {/* <Route path="/App"  component={App}/>
-            <Route path="/Refer/:id"   component={SignUpWithId} />*/}
+            {/* <Route path="/App"  component={App}/>*/}
+            {/* <Route path="/Refer/:id"   component={SignUpWithId} /> */}
             <Route path="/Admin/2b87b6e8-3928-11eb-adc1-0242ac120002"  component={Admin}/> 
             <Route exact path="/" render={() => (<Redirect to="/Home" />)} />  
             <Route component={pagenotfoung}></Route>

@@ -35,7 +35,7 @@
 .darker {
     
     border-color: #ccc;
-    background-color: #ddd;
+    background-color: rgb(161, 182, 226);
   }
   
   /* Clear floats */

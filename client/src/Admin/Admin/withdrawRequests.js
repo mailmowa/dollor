@@ -142,7 +142,9 @@ export default class WithdrawRequests extends React.Component {
               })
               .then(res => {
                       console.log(res.data);
-                      this.createTable(res.data.staetment);
+                      window.location.reload()
+                     // this.createTable(res.data.staetment);
+                      
                       console.log("in",this.state.data1);
               })
               .catch(err => {

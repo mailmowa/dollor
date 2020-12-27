@@ -78,7 +78,7 @@ class Withdrawal extends React.Component {
         })
 
         try{
-                if(parseFloat(e.target.Send_fund.value) >  parseFloat(30)){
+                if(parseFloat(e.target.Send_fund.value) >  parseFloat(20)){
 
                     if(parseFloat(e.target.Send_fund.value) <= parseFloat(e.target.Available_fund.value) ){
 
@@ -120,7 +120,7 @@ class Withdrawal extends React.Component {
                                         {
                                             this.setState({
                                                 Loading: false,
-                                                Err_message : "Error in else !",
+                                                Err_message : "Error  !",
                                                 open : true, 
                                             })
                                             window.location.reload()
@@ -146,7 +146,7 @@ class Withdrawal extends React.Component {
                 }else{
                  //   document.getElementById('UpD_Msg').innerHTML = "Minium Amount should be $30"
                     this.setState({ Loading: false ,
-                        Err_message : "Minium Amount should be $30",
+                        Err_message : "Minium Amount should be $20",
                         open : true, })
                 }
             }
