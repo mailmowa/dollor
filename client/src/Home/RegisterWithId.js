@@ -155,13 +155,13 @@ class Registerwithid extends Component {
                         <div class="row mb-3">
                             <div class="col">
                                 <div class="form-outline">
-                                    <input type="text" name="fname"   pattern="^[a-zA-Z]+$" value={this.state.fname} onChange={(e) => this.handleChange(e)} required id="form3Example1" style={{backgroundColor:"#393e46"}} class="form-control text-white"  placeholder="Firstname"/>
+                                    <input type="text" name="fname"   pattern="^[a-zA-Z]+$" value={this.state.fname} onChange={(e) => this.handleChange(e)} required id="form3Example1" style={{backgroundColor:"#393e46"}} class="form-control text-white"  placeholder="Surname"/>
                                     {/* <label class="form-label text-white" for="form3Example1">First name</label> */}
                                 </div>
                                 </div>
                                 <div class="col">
                                 <div class="form-outline">
-                                    <input type="text" name="lname" pattern="^[a-zA-Z]+$" value={this.state.lname} onChange={(e) => this.handleChange(e)} required id="form3Example2" style={{backgroundColor:"#393e46"}} class="form-control text-white" placeholder="Lastname"/>
+                                    <input type="text" name="lname" pattern="^[a-zA-Z]+$" value={this.state.lname} onChange={(e) => this.handleChange(e)} required id="form3Example2" style={{backgroundColor:"#393e46"}} class="form-control text-white" placeholder="Name"/>
                                     {/* <label class="form-label" for="form3Example2">Last name</label> */}
                                 </div>
                                 </div>

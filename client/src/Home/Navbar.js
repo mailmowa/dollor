@@ -35,7 +35,7 @@ class Navbar extends React.Component {
                            <div className="Brand_heading_nav">
                                 {/* <i class='fas fa-dollar-sign fa-rotate-45'></i> */}
                                 <span >
-                                            <span style={{color:"gold",fontSize:"1.5em"}}>$</span>Dollar.net
+                                            <span style={{color:"gold",fontSize:"1.5em"}}>$</span>Dollornet
                                 </span>
                             </div>
                         </a>
@@ -49,8 +49,8 @@ class Navbar extends React.Component {
                                     <li class="nav-item"><a href="/Home/BusinessPlan" class=" nav-link text-uppercase font-weight-bold m-1 ">Business Plan</a></li>
 
                                 </ul>
-                                <span className="btn btn-rounded rounded-pill aqua-gradient m-1 btn-md"><a href="/Home/Login">login</a></span>
-                                <span className="btn btn-rounded aqua-gradient rounded-pill m-1 btn-md"><a href="/Home/Register">Register</a></span>
+                                <span className="nav-item "><a href="/Home/Login" class="nav-link text-uppercase font-weight-bold m-1">login</a></span>
+                                <span className="nav-item "><a href="/Home/Register" class="nav-link text-uppercase font-weight-bold m-1">Register</a></span>
 
                             </div>
                         </div>

@@ -50,7 +50,7 @@ setInterval(()=>{
   var date = new Date();
   var day = date.getDay();
   var time = date.getHours()
-  // if(time === 1){
+   if(time === 1){
     
           User.updateMany({
             Royalty:{$gt:0,$lt:31}
@@ -67,7 +67,7 @@ setInterval(()=>{
                 console.log(err);
           })
   
-  // }
+   }
 
 },3600000);
 

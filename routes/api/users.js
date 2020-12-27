@@ -38,6 +38,7 @@ const dailyReport = require('../../modals/dailyReport');
 const Depositstatement = require('../../modals/DepositStatement');
 const { getMaxListeners } = require('../../modals/Users');
 
+const Contact = require('../../modals/Contact');
 
 let number;
 User.find({}).sort({_id:-1}).limit(1).then(res => 
@@ -48,6 +49,7 @@ User.find({}).sort({_id:-1}).limit(1).then(res =>
   );
 
 // let number = userde
+
 
 
 //Create Tickets
@@ -88,6 +90,40 @@ router.post('/CreateTickets', (req,res) => {
             console.log(err.message);
            res.json({status: 0})
           })
+
+      }
+      catch(err){
+        console.log(err.message);
+        res.json({status: 0})
+      }
+
+});
+
+//Create Tickets
+//@rout get api/users/CreateTickets
+// Add Ticket
+// @acess public
+router.post('/CreateContact', (req,res) => {
+
+  console.log(req.body);
+
+  let current_datetime = new Date()
+  let end_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate()
+
+
+  try{
+         
+           const contact = new Contact({
+             username:req.body.uname,
+             mail: req.body.mail,
+             message: req.body.message,
+             date : end_date
+           })
+
+           contact.save().then(res1 => {
+             console.log(res1);
+             res.json({status: 1})
+           })
 
       }
       catch(err){

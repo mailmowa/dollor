@@ -24,13 +24,24 @@ class About extends Component {
                         <h2 class="font-weight-small ">Lorem ipsum dolor sit amet</h2>
                         
                         <p class=" mb-4 P">
-                            This is a social network of a standard individuals dollornet is neither an organization nor  a monitary cooperate neither an insurance agency, nor a bank, it is a social network. The primary target of the network is to monetarily engage its part and help one another.
-                        </p>
+                        This is a social network of a standard individuals. Dollornet
+                        is neither an organization nor a monitory corporate, neither
+                        an insurance agency nor a bank. It is a social network.The
+                        primary target of the network is to monetarily engage its
+                        part and to help one another.
+                       </p>
                         <p class="  mb-4 P">
-                            A shared guide store has been made by the individuals as gifts .back individual from the network has the chance of independent work.
-                            The opportunity to the monetarily strong,the chance to help one another,the occasion to become confident,and the moment to help the nation in the midst of cataclysmic events and emergencies.
+                        A shared guide store has been made by the individuals as
+                        gifts. Each individual from the network has the chance of
+                        independent work.
                         </p>
-                        
+                       
+                       <p class="mb-4 P">
+                        The opportunity to be monetarily strong, the chance to
+                        help one another, the occasion to become confident and
+                        the moment to help the nation in the midst of cataclysmic
+                        events and emergencies.
+                        </p>
                         {/* <a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Learn More</a> */}
                       </div>
                       {/* <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"> */}
