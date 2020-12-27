@@ -38,7 +38,7 @@ const TheSidebar = () => {
          <div className="Brand_heading">
          {/* <i class='fas fa-dollar-sign fa-rotate-45'></i> */}
          <span >
-                      <span style={{color:"gold",fontSize:"1.5em"}}>$</span>Dollar.net
+                      <span style={{color:"gold",fontSize:"1.5em"}}>$</span>Dollornet
          </span>
          </div>
         <CIcon

@@ -252,7 +252,7 @@ class Profile extends React.Component {
                                     htmlFor="defaultFormRegisterNameEx"
                                     className="grey-text"
                                   >
-                                    First name
+                                    Surname
                                   </label>
                                   <input
                                     value={this.state.fname.value}
@@ -272,7 +272,7 @@ class Profile extends React.Component {
                                     htmlFor="defaultFormRegisterEmailEx2"
                                     className="grey-text"
                                   >
-                                    Last name
+                                    Name
                                   </label>
                                   <input
                                     value={this.state.lname.value}

@@ -68,7 +68,7 @@ class Dashboard extends Component {
 
                   <Grid container spacing={2}>
                     <Grid item xs={12} justify="center" sm={5}>
-                        <input className="_input_class form-control sm"  value={`http://www.Dollornet.com/Home/Refer/${this.userdata.userId}`} id="myInput"/>
+                        <input className="_input_class form-control sm"  value={`https://www.Dollornet.com/Home/Refer/${this.userdata.userId}`} id="myInput"/>
                     </Grid>
                     <Grid item xs={12} sm={1}>
                     <span> <button className="btn btn-sm" onClick={() => this.Copy_function()}>Copy</button></span>

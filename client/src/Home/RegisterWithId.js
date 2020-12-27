@@ -447,7 +447,7 @@ class Registerwithid extends Component {
 
                             {/* <!-- Referal input --> */}
                             <div class="form-outline ">
-                                <input type="text" name="refer" pattern="[^' ']+" value={this.props.match.params.idS} required onChange={(e) => this.handleChange(e)} id="form3Example4" style={{backgroundColor:"#393e46"}} class="form-control text-white" placeholder="Referal Id"/>
+                                <input type="text" name="refer" pattern="[^' ']+" value={this.props.match.params.id} required onChange={(e) => this.handleChange(e)} id="form3Example4" style={{backgroundColor:"#393e46"}} class="form-control text-white" placeholder="Referal Id"/>
                                 {/* <label class="form-label" for="form3Example4">Password</label> */}
                             </div>
 
