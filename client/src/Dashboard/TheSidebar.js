@@ -30,7 +30,7 @@ const TheSidebar = () => {
 
   return (
     <div>
-        <CSidebar
+        <CSidebar style={{backgroundColor:"#323232"}}
       show={show}
     //   onShowChange={}
     >
@@ -52,7 +52,7 @@ const TheSidebar = () => {
           height={35}
         />
       </CSidebarBrand>
-      <CSidebarNav>
+      <CSidebarNav className="sidebar_nav">
 
         <CCreateElement
           items={navigation}

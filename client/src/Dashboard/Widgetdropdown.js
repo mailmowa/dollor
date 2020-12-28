@@ -20,20 +20,10 @@ const WidgetsDropdown = (props) => {
           color="gradient-primary"
           style={{paddingBottom:"1em",fontSize:"1.5em"}}
           header={props.incomes.wallet}
-          text="Wallet Income"
-        //   footerSlot={
-        //     <ChartLineSimple
-        //       pointed
-        //       className="c-chart-wrapper mt-3 mx-3"
-        //       style={{height: '70px'}}
-        //       dataPoints={[65, 59, 84, 84, 51, 55, 40]}
-        //       pointHoverBackgroundColor="primary"
-        //       label="Members"
-        //       labels="months"
-        //     />
-        //   }
+          text="Wallet "
         >
-            <div style={{width:"40%",height:"100%",fontSize:"3.2em",display:"flex",justifyContent:"flex-end",alignContent:"center",opacity:"0.6"}}>
+
+          <div style={{width:"40%",height:"100%",fontSize:"3.2em",display:"flex",justifyContent:"flex-end",alignContent:"center",opacity:"0.6"}}>
             <i class='fas fa-wallet '></i>
           </div>
          
@@ -56,7 +46,7 @@ const WidgetsDropdown = (props) => {
           color="gradient-info"
           header={props.incomes.Level}
           style={{paddingBottom:"1em",fontSize:"1.5em"}}
-          text="Level Income "
+          text="Direct & Level"
         //   footerSlot={
         //     <ChartLineSimple
         //       pointed
@@ -82,7 +72,7 @@ const WidgetsDropdown = (props) => {
           color="gradient-warning"
           header={props.incomes.Recieved}
           style={{paddingBottom:"1em",fontSize:"1.5em"}}
-          text="Received Income"
+          text="Received Fund"
         //   footerSlot={
         //     <ChartLineSimple
         //       className="mt-3"

@@ -5,7 +5,6 @@ export default [
       to: '/Home/dashboard',
       // icon: 'cil-speedometer',
       fontIcon: 'fas fa-tachometer-alt',
-    
     },
     {
       _tag: 'CSidebarNavTitle',
