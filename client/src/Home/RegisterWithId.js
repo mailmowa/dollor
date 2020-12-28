@@ -30,6 +30,39 @@ class Registerwithid extends Component {
             display:true,
         
         })
+        axios.post('/api/users/getSingleUserDetails123',{
+            userid : this.props.match.params.id
+        }).then(res => {
+
+            if(res.data.status === 1){
+                console.log(res.data.user);
+                document.getElementById("Refer_name").value = res.data.user.firstName +" "+res.data.user.lastName
+            }
+            else{
+                console.log("not exist");
+                document.getElementById("Refer_name").value = "Invalid Referal Id"
+            }
+            
+        })
+    }
+
+    handleblur = (e) => {
+
+        axios.post('/api/users/getSingleUserDetails123',{
+            userid : e.target.value.toUpperCase()
+        }).then(res => {
+
+            if(res.data.status === 1){
+                console.log(res.data.user);
+                document.getElementById("Refer_name").value = res.data.user.firstName +" "+res.data.user.lastName
+            }
+            else{
+                console.log("not exist");
+                document.getElementById("Refer_name").value = "Invalid Referal Id"
+            }
+            
+        })
+
     }
 
 
@@ -446,8 +479,27 @@ class Registerwithid extends Component {
                             </div>
 
                             {/* <!-- Referal input --> */}
+                            <div class="form-outline mb-3">
+                                <input type="text"
+                                    onBlur={(e) => this.handleblur(e)}
+                                    name="refer" 
+                                    pattern="[^' ']+" 
+                                    value={this.props.match.params.id} 
+                                    required 
+                                    onChange={(e) => this.handleChange(e)} 
+                                    id="form3Example4" 
+                                    style={{backgroundColor:"#393e46"}} 
+                                    class="form-control text-white"
+                                    placeholder="Referal Id"
+                                 />
+                                {/* <label class="form-label" for="form3Example4">Password</label> */}
+                            </div>
+
                             <div class="form-outline ">
-                                <input type="text" name="refer" pattern="[^' ']+" value={this.props.match.params.id} required onChange={(e) => this.handleChange(e)} id="form3Example4" style={{backgroundColor:"#393e46"}} class="form-control text-white" placeholder="Referal Id"/>
+                                <input type="text" 
+                                id="Refer_name"
+                                disabled={true}
+                                required style={{backgroundColor:"#393e46"}} class="form-control text-white" placeholder="Referal Name"/>
                                 {/* <label class="form-label" for="form3Example4">Password</label> */}
                             </div>
 

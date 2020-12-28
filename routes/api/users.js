@@ -1139,15 +1139,16 @@ console.log("***********************************************************");
   try{
 
           User.findOne({_id : req.body.userid})
+          .select('firstName lastName')
           .then(user =>{
 
                     console.log(user);
-                    if(user)
+                    if(!user)
                     {
-                      res.json({status :1 , user})
+                      res.json({status : 0 })
                     }
                     else{
-                      res.json({status : 0 })
+                      res.json({status :1 , user})
                     }
 
             }).catch(err => {
@@ -1163,6 +1164,39 @@ console.log("***********************************************************");
         res.json({status : 0 })
     }
 });
+
+router.post('/getSingleUserDetails123', (req,res) => {
+  
+  console.log("***********************************************************");  
+  
+    try{
+  
+            User.findOne({userId : req.body.userid})
+            .select('firstName lastName')
+            .then(user =>{
+  
+                      console.log(user);
+                      if(!user)
+                      {
+                        res.json({status : 0 })
+                      }
+                      else{
+                        res.json({status :1 , user})
+                      }
+  
+              }).catch(err => {
+  
+                console.log(err.message);
+                res.json({status : 0 })
+  
+              })
+      }
+      catch(err)
+      {
+          console.log(err.message);
+          res.json({status : 0 })
+      }
+  });
 
 //@rout get api/users/Direct_Members
 // @desc get all users
