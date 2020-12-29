@@ -1139,7 +1139,6 @@ console.log("***********************************************************");
   try{
 
           User.findOne({_id : req.body.userid})
-          .select('firstName lastName')
           .then(user =>{
 
                     console.log(user);
