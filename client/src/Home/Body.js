@@ -33,7 +33,7 @@ class Body extends Component {
                   <div class="container py-5">
                     <div class="row align-items-center mb-5">
                       <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
-                        <h2 class="font-weight-light" style={{color:"lightblue",display:"none"}}>Donate us</h2>
+                        {/* <h2 class="font-weight-light" style={{color:"lightblue",display:"none"}}>Donate us</h2> */}
                         <p class="font-italic text-muted mb-4">Be a part of this by donating to our best crowd funding plan,Also get huge benifits</p>
                         <a href="/Home/Register" class="btn btn-light btn-md px-5 rounded-pill bg-gradient-info text-white shadow-sm"  style={{letterSpacing:"2px"}}>Donate</a>
                       </div>
