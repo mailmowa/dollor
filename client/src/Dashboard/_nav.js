@@ -156,14 +156,14 @@ export default [
       _children: [
         {
           _tag: 'CSidebarNavItem',
-          name: 'Send Fund',
-          to: '/Home/Fund-wallet/send-fund',
+          name: 'Transefer Fund',
+          to: '/Home/Fund-wallet/transfer-fund',
         
         },
         {
           _tag: 'CSidebarNavItem',
-          name: 'Send Fund to pin wallet',
-          to: '/Home/Fund-wallet/send-fund-to-pin-wallet',
+          name: 'Transfer Fund to pin wallet',
+          to: '/Home/Fund-wallet/transfer-fund-to-pin-wallet',
         },
         {
           _tag: 'CSidebarNavItem',
@@ -281,7 +281,7 @@ export default [
     },
     {
       _tag: 'CSidebarNavItem',
-      name: 'Royalty',
+      name: 'ROI',
       to: '/Home/Royalty',
       fontIcon: 'fas fa-registered',
 

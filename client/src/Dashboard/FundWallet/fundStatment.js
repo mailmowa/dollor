@@ -9,7 +9,7 @@ import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider'
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { MDBDataTable } from 'mdbreact';
+import { MDBDataTableV5 } from 'mdbreact';
 import Axios from 'axios';
 
 const classes = makeStyles((theme) => ({
@@ -47,7 +47,7 @@ const classes = makeStyles((theme) => ({
         field: 'Sno',
       },
       {
-        label: 'user Id',
+        label: 'User Id',
         field: 'userId',
       },
       {
@@ -72,7 +72,7 @@ const classes = makeStyles((theme) => ({
         sort: 'desc'
       },
       {
-        label: 'Amount($)',
+        label: 'Amount',
         field: 'Amount',
       }
     ],
@@ -181,11 +181,11 @@ createTable= (members)=> {
                           Loading...
                        </div>)
                        :
-                              <MDBDataTable
+                              <MDBDataTableV5
                               striped
                               bordered
                               sortable={false}
-                              theadColor="#fff"
+                              theadColor="#00000"
                               entries={7}
                               small
                               noBottomColumns

@@ -132,7 +132,7 @@ createTable= (members)=> {
             
                 <Paper elevation={3}>
                 <div className="Header" >
-                                 Pool statement
+                                 Pool Statement
                             </div>
                   
                 <div  style={{padding:"0% 3%"}} >  

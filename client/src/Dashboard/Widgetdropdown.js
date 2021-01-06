@@ -72,7 +72,7 @@ const WidgetsDropdown = (props) => {
           color="gradient-warning"
           header={props.incomes.Recieved}
           style={{paddingBottom:"1em",fontSize:"1.5em"}}
-          text="Received Fund"
+          text="Received"
         //   footerSlot={
         //     <ChartLineSimple
         //       className="mt-3"
@@ -97,7 +97,7 @@ const WidgetsDropdown = (props) => {
         <CWidgetDropdown
           color="gradient-danger"
           header={props.incomes.Autopool}
-          text="Autopool Income"
+          text="Autopool"
           style={{paddingBottom:"1em",fontSize:"1.5em"}}
           
         >
@@ -112,7 +112,7 @@ const WidgetsDropdown = (props) => {
           color="gradient-dark"
           header={props.incomes.Royalty}
           style={{paddingBottom:"1em",fontSize:"1.5em"}}
-          text="Royalty Income"
+          text="ROI"
         //   footerSlot={
         //     <ChartLineSimple
         //       className="mt-3"

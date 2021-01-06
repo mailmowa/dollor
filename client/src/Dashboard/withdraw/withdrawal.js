@@ -168,39 +168,39 @@ class Withdrawal extends React.Component {
     render(){
 
       
-            if(!this.state.Active) {  
-                return(
-                <div style={{ width: "100%",
-                    display:"flex",
-                    justifyContent:"center",
-                    alignItems:"center",
-                    padding:"5%",
-                    color:"black",
-                    backgroundColor:"#006B94"}}>
+            // if(!this.state.Active) {  
+            //     return(
+            //     <div style={{ width: "100%",
+            //         display:"flex",
+            //         justifyContent:"center",
+            //         alignItems:"center",
+            //         padding:"5%",
+            //         color:"black",
+            //         backgroundColor:"#006B94"}}>
 
-                            PLEASE ACTIVATE YOUR ACCOUNT
+            //                 PLEASE ACTIVATE YOUR ACCOUNT
                         
-                    </div>
-                )
-            }
-            else if(this.state.Level.length < 4)
-            {
-                return(
+            //         </div>
+            //     )
+            // }
+            // else if(this.state.Level.length < 4)
+            // {
+            //     return(
 
-                    <div style={{ width: "100%",
-                    display:"flex",
-                    justifyContent:"center",
-                    alignItems:"center",
-                    padding:"5%",
-                    color:"black",
-                    backgroundColor:"#006B94"}}>
+            //         <div style={{ width: "100%",
+            //         display:"flex",
+            //         justifyContent:"center",
+            //         alignItems:"center",
+            //         padding:"5%",
+            //         color:"black",
+            //         backgroundColor:"#006B94"}}>
 
-                            PLEASE JOIN 4 MEMBERS TO WITHDRAW FUND
+            //                 PLEASE JOIN 4 MEMBERS TO WITHDRAW FUND
                         
-                    </div>
+            //         </div>
 
-                     )
-            }else{
+            //          )
+            // }else{
 
 
 
@@ -239,7 +239,7 @@ class Withdrawal extends React.Component {
                                         </div>
                                 </Grid>
                                     <div style={{padding:"15px 0px",fontSize:"1.2em",fontWeight:"500"}} className="text-muted">
-                                    {/* <Divider/> */}Available amount($) to withdraw
+                                    {/* <Divider/> */}Available Fund To Withdraw
                                     </div>
                                     <div id="_MSG"></div>
                                     <Grid container xs={12} spacing={2}>
@@ -247,35 +247,35 @@ class Withdrawal extends React.Component {
                                             <div className="Send_Fund_body_ID" >
                                                 <div className="Send_Fund_body_wallet">
             
-                                                <input type="text" disabled value="LEVEL INCOME" className="form-control"></input>
+                                                <input type="text" disabled value="Level Income" className="form-control"></input>
                                                 <input type="text"  value={this.state.levelIncome} disabled className="form-control"></input>
                                                 <input type="number" value={this.state._level} onChange={(e)=> this.handleChange(e)} required name="_level" min="0" step="any" max={this.state.levelIncome}  className="form-control"></input>
             
                                                 </div >
                                                 <div className="Send_Fund_body_wallet">
             
-                                                <input type="text" readOnly value="AUTOPOOL INCOME" className="form-control"></input>
+                                                <input type="text" readOnly value="Autopool Income" className="form-control"></input>
                                                 <input type="text"  value={this.state.autoPoolIncome} disabled className="form-control"></input>
                                                 <input type="number" value={this.state._autopool} onChange={(e)=> this.handleChange(e)} required name="_autopool" min="0" step="any" max={this.state.autoPoolIncome}  className="form-control"></input>
             
                                                 </div>
                                                 <div className="Send_Fund_body_wallet">
             
-                                                <input type="text" readOnly value="FUND SHARING INCOME" className="form-control"></input>
+                                                <input type="text" readOnly value="Wallet" className="form-control"></input>
                                                 <input type="text"  value={this.state.fundSharingIncome} disabled className="form-control"></input>
                                                 <input type="number" value={this.state._fund} onChange={(e)=> this.handleChange(e)} required name="_fund" min="0" step="any" max={this.state.fundSharingIncome}  className="form-control"></input>
             
                                                 </div>
                                                 <div className="Send_Fund_body_wallet">
             
-                                                <input type="text" readOnly value="RECEIVED INCOME" className="form-control"></input>
+                                                <input type="text" readOnly value="Received Fund" className="form-control"></input>
                                                 <input type="text"  value={this.state.recievedIncome} disabled className="form-control"></input>
                                                 <input type="number" value={this.state._recieved} onChange={(e)=> this.handleChange(e)} required name="_recieved" min="0" step="any" max={this.state.recievedIncome}  className="form-control"></input>
 
                                                 </div>
                                                 <div className="Send_Fund_body_Total">
             
-                                                <input type="text" readOnly value="AVAILABLE INCOME" className="form-control"></input>
+                                                <input type="text" readOnly value="Available Fund" className="form-control"></input>
                                                 <input type="text"
                                                 value={(this.state.recievedIncome+this.state.fundSharingIncome+this.state.autoPoolIncome+this.state.levelIncome)}
                                                 disabled 
@@ -287,7 +287,7 @@ class Withdrawal extends React.Component {
 
                                                 <div className="Send_Fund_body_Total">
                                             
-                                                <input type="text" readOnly value="TRANSFER FUND" className="form-control"></input>
+                                                <input type="text" readOnly value="Total" className="form-control"></input>
                                                 <input type="text"
                                                 name="Send_fund"
                                                 value={parseFloat(this.state._level)+parseFloat(this.state._recieved)+parseFloat(this.state._fund)+parseFloat(this.state._autopool)}
@@ -300,7 +300,7 @@ class Withdrawal extends React.Component {
 
                                                 <div className="Send_Fund_body_Total">
                                             
-                                                <input type="text" readOnly value="TOTAL" className="form-control"></input>
+                                                <input type="text" readOnly value="Total After Deduction" className="form-control"></input>
                                                 <input type="text"
                                                 name="_total"
                                                 value={(parseFloat(this.state._level)+parseFloat(this.state._recieved)+parseFloat(this.state._fund)+parseFloat(this.state._autopool))-parseFloat((parseFloat(this.state._level)+parseFloat(this.state._recieved)+parseFloat(this.state._fund)+parseFloat(this.state._autopool))*0.15)}
@@ -331,7 +331,7 @@ class Withdrawal extends React.Component {
 
 
 
-            }
+            // }
    
 
     }

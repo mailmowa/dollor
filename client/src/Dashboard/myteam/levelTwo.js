@@ -19,7 +19,7 @@ import Axios from 'axios';
         field: 'Sno',
       },
       {
-        label: 'user Id',
+        label: 'User Id',
         field: 'userId',
         
       },

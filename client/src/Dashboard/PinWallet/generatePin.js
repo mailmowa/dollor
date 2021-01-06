@@ -322,7 +322,7 @@ class GeneratePin extends React.Component {
    {
     return(   <div>
       <header className="Header">
-           Generate Pins
+           Generate Pin
       </header>
      <div className="">
             

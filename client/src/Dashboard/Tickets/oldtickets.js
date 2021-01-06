@@ -230,7 +230,7 @@ try{
                                    <div className="container_Message gradient-primary">
                                    <img src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" alt="Avatar"  />
                                    <p style={{float:"left",fontWeight:"400"}}>{msg.message}</p>
-                                   <span class="time-right">Dollar Net</span>
+                                   <span class="time-right">Dollornet</span>
                                    </div>
                                   
                                   

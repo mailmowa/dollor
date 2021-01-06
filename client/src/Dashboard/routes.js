@@ -50,8 +50,8 @@ const routes = [
 
   //Fund Wallet
 
-  { path: '/Home/Fund-wallet/send-fund', name: 'send fund', component: Sendfund },
-  { path: '/Home/Fund-wallet/send-fund-to-pin-wallet', name: 'send fund to pin wallet', component: Sendfundtopinwallet },
+  { path: '/Home/Fund-wallet/transfer-fund', name: 'Transfer fund', component: Sendfund },
+  { path: '/Home/Fund-wallet/transfer-fund-to-pin-wallet', name: 'Transfer fund to pin wallet', component: Sendfundtopinwallet },
   { path: '/Home/Fund-wallet/Statement', name: 'Statement', component: Fundstatement },
   // { path: '/Fund-wallet/Fund-sharing', name: 'Fund Sharing', component:  },
 
@@ -63,7 +63,7 @@ const routes = [
   //Pin wallet
 
   { path: '/Home/Pin-wallet/Activate', name: 'Activate', component: Activate },
-  { path: '/Home/Pin-wallet/GeneratePin', name: 'Generate Pins', component: GeneratePin },
+  { path: '/Home/Pin-wallet/GeneratePin', name: 'Generate Pin', component: GeneratePin },
   { path: '/Home/Pin-wallet/AvailablePins', name: 'Available Pins', component: Availablepins },
   { path: '/Home/Pin-wallet/Pin-Balance', name: 'Pin balance', component: Pinbalance },
 
@@ -74,7 +74,7 @@ const routes = [
 
   //Tickets
 
-  { path: '/Home/Ticket/Raise-ticket', name: 'Raise Tickets', component: Raise },
+  { path: '/Home/Ticket/Raise-ticket', name: 'Raise Ticket', component: Raise },
   { path: '/Home/Ticket/Old-tickets', name: 'Old-Tickets', component: Old, exact: true },
 
   //Royalty

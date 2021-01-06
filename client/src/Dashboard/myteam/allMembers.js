@@ -52,7 +52,7 @@ import LevelTen from "./levelTen";
         field: 'Sno',
       },
       {
-        label: 'user Id',
+        label: 'User Id',
         field: 'userId',
         
       },

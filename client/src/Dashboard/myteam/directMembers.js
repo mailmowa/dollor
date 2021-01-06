@@ -47,7 +47,7 @@ const classes = makeStyles((theme) => ({
         field: 'Sno',
       },
       {
-        label: 'user Id',
+        label: 'User Id',
         field: 'userId',
         
       },

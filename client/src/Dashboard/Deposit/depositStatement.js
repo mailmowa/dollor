@@ -132,7 +132,7 @@ class DepositStatement extends React.Component{
                 amount : Direct.Amount,
                 name: Direct.Name,
                 date: new Date(Direct.date).toLocaleDateString(),
-                send : <input type="text" size="10" readOnly value={Direct.HashCode}></input>,
+                send : <input type="text" size="10" readOnly value={Direct.SentBTCaddress}></input>,
                 hash : <input type="text" size="10" readOnly value={Direct.HashCode}></input> ,
                 userid: Direct.userId,
                 status : Direct.success

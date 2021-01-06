@@ -254,7 +254,7 @@ render(){
                   
                       <Grid  container xs={12} >
                       <p style={{fontSize:"12px"}} className="text-muted">*Beware of spaces while entering 
-                                              member id</p>
+                                              Member Id</p>
                       <div style={{display:"flex",justifyContent:"space-around",width:"100%"}} > 
                       
                       <form className="Send_Fund_body_ID" onSubmit={(e) => this.handleMemberId(e)}> 
